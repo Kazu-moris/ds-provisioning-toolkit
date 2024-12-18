@@ -4,6 +4,10 @@
 
 ## 概要
 
+本質的にやりたいことは、データのロジックの部分に集中できる状態をローカルに実現すること。
+
+そしてそれは、すぐにクラウドへのデプロイやCICDへの移行ができることを前提に考えられるべき。
+
 このツールキットは、以下のような作業を行う際の環境構築を支援します：
 
 - データ分析のプロトタイピング
@@ -21,6 +25,12 @@
 - dbt Core環境の自動セットアップ
 - dbtプロジェクトテンプレートの提供
 - データモデリング用のサンプルマクロとテスト
+- コード品質を維持するための各種Linter/Formatter
+  - Python: black, isort, flake8, mypy
+  - SQL: sqlfluff
+  - Jupyter Notebook: nbformat
+  - YAML: yamllint
+  - シェルスクリプト: shellcheck
 
 ## コンテナ環境について
 
@@ -47,6 +57,7 @@
 - dbt Core 1.5以上
 - 対応データウェアハウス（BigQuery, Snowflake, Redshift等）へのアクセス権限
 - Git
+- pre-commit（コード品質チェック自動化用）
 
 ### 推奨
 - VS Code + Dev Containers拡張機能
